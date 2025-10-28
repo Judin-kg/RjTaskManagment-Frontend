@@ -1,0 +1,163 @@
+/* ✅ Container Styling */
+.staff-reports-container {
+  padding: 1rem;
+  background: #f9f9f9;
+}
+
+.report-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.no-tasks-text {
+  text-align: center;
+  color: #777;
+}
+
+/* ✅ Responsive Table */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* ✅ Enables horizontal scroll on small devices */
+  -webkit-overflow-scrolling: touch;
+}
+
+.staff-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  min-width: 800px; /* ✅ Keeps table scrollable on small screens */
+}
+
+.staff-report-table th,
+.staff-report-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.staff-report-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.staff-report-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* ✅ Status Colors */
+.status.completed {
+  color: green;
+  font-weight: bold;
+}
+
+.status.pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.status.in-progress {
+  color: blue;
+  font-weight: bold;
+}
+
+.status.cancelled {
+  color: red;
+  font-weight: bold;
+}
+
+/* ✅ Tablet View */
+@media (max-width: 768px) {
+  .report-title {
+    font-size: 1.5rem;
+  }
+
+  .staff-report-table th,
+  .staff-report-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+/* ✅ Mobile View */
+@media (max-width: 480px) {
+  .report-title {
+    font-size: 1.3rem;
+  }
+
+  .staff-report-table th,
+  .staff-report-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+/* 🔎 Filter Styles */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.filter-input {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.filter-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+.clear-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease-in-out;
+}
+
+.clear-btn:hover {
+  background: #d32f2f;
+}
+.export-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.export-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+
+.export-btn.pdf {
+  background-color: #e53935;
+  color: white;
+}
+
+.export-btn.pdf:hover {
+  background-color: #c62828;
+}
+
+.export-btn.excel {
+  background-color: #43a047;
+  color: white;
+}
+
+.export-btn.excel:hover {
+  background-color: #2e7d32;
+}

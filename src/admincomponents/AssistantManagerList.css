@@ -1,0 +1,239 @@
+/* .assistant-manager-list-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.assistant-manager-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.assistant-manager-list-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.logout-btn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 15px;
+}
+
+.logout-btn:hover {
+  background: #e04344;
+}
+
+.assistant-manager-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.assistant-manager-table th,
+.assistant-manager-table td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.assistant-manager-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.assistant-manager-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.assistant-manager-table tr:hover {
+  background: #f0f8ff;
+}
+
+.assistant-manager-table td {
+  color: #555;
+}
+.add-assistant-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+} */
+
+.assistant-manager-list-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.assistant-manager-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.assistant-manager-list-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-assistant-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.add-assistant-btn:hover {
+  background: #43a047;
+}
+
+/* ===== Table Wrapper for Scroll ===== */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* enables horizontal scroll */
+  -webkit-overflow-scrolling: touch;
+}
+
+.assistant-manager-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  min-width: 600px; /* ensures scroll on small screens */
+}
+
+.assistant-manager-table th,
+.assistant-manager-table td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.assistant-manager-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.assistant-manager-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.assistant-manager-table tr:hover {
+  background: #f0f8ff;
+}
+
+.assistant-manager-table td {
+  color: #555;
+}
+
+/* ===== Tablet View (≤ 768px) ===== */
+@media (max-width: 768px) {
+  .assistant-manager-table th,
+  .assistant-manager-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* ===== Mobile View (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .assistant-manager-table {
+    min-width: 500px; /* keeps horizontal scroll */
+  }
+
+  .assistant-manager-table th,
+  .assistant-manager-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .assistant-manager-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+/* Container for buttons inside the table cell */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Reset & Delete Button Styles */
+.reset-btn,
+.delete-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Reset Button (Blue) */
+.reset-btn {
+  background-color: #2563eb;
+  color: white;
+}
+
+.reset-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Delete Button (Red) */
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+/* ✅ Responsive: Stack buttons vertically on smaller screens */
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .reset-btn,
+  .delete-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

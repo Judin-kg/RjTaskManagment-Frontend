@@ -1,0 +1,131 @@
+/* General dashboard styles */
+/* General dashboard styles */
+.assistant-dashboard {
+  padding: 2rem;
+  background: #f9f9f9;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.loading-text,
+.no-task-text,
+.no-login {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Pie Chart Wrapper */
+.chart-wrapper {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1rem;
+}
+
+.task-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.task-table th,
+.task-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.task-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.task-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.task-table select {
+  padding: 5px;
+  font-size: 13px;
+}
+
+/* ===== Tablet (≤768px) ===== */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.6rem;
+  }
+
+  .chart-wrapper {
+    height: 250px;
+  }
+
+  .task-table th,
+  .task-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+/* ===== Mobile (≤480px) ===== */
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 1.4rem;
+  }
+
+  .chart-wrapper {
+    height: 200px;
+  }
+
+  .task-table {
+    min-width: 600px;
+  }
+
+  .task-table th,
+  .task-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+/* ===== Very small mobile (<400px) ===== */
+@media (max-width: 400px) {
+  .chart-wrapper {
+    height: 180px;
+  }
+
+  .dashboard-title {
+    font-size: 1.2rem;
+  }
+
+  .task-table {
+    min-width: 500px;
+  }
+
+  .task-table th,
+  .task-table td {
+    font-size: 11px;
+    padding: 5px;
+  }
+}
+
+

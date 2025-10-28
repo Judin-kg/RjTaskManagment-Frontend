@@ -1,0 +1,35 @@
+.hierarchy-container {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hierarchy-container {
+    padding: 1.5rem;
+  }
+}
+
+.hierarchy-node {
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 640px) {
+  .hierarchy-node {
+    font-size: 0.875rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hierarchy-node {
+    font-size: 1rem;
+  }
+}
+
+.hierarchy-scroll {
+  overflow-x: auto;
+}

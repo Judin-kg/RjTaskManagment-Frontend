@@ -1,0 +1,121 @@
+/* Basic CSS variables so you can tweak easily */
+:root {
+  --sidebar-w: 260px;
+  --sidebar-bg: #f8f9fa; /* Bootstrap .bg-light */
+  --sidebar-active-bg: #0d6efd1a; /* subtle primary tint */
+}
+
+/* Layout wrappers */
+.admin-wrap {
+  background: #fff;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--sidebar-bg);
+  /* Desktop: sticky column */
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 56px); /* account for navbar height */
+  overflow-y: auto;
+  display: none; /* hidden by default on mobile */
+}
+
+/* Show sidebar at >= lg */
+@media (min-width: 992px) {
+  .sidebar {
+    display: block;
+    position: sticky;
+  }
+}
+
+/* Mobile/Tablet overlay behavior */
+.sidebar.open {
+  display: block;
+  position: fixed;
+  top: 56px; /* below the top navbar */
+  left: 0;
+  bottom: 0;
+  z-index: 1045; /* above content */
+  width: var(--sidebar-w);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+}
+
+/* Backdrop when sidebar is open (mobile) */
+.backdrop {
+  position: fixed;
+  inset: 56px 0 0 0; /* below navbar */
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1040;
+}
+
+/* Main content area */
+.content {
+  min-width: 0; /* prevent overflow */
+}
+
+/* Nav links look crisp and accessible */
+.sidebar .nav-link {
+  border-radius: .5rem;
+  color: #495057;
+  font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+  background: rgba(0,0,0,.04);
+}
+
+.sidebar .nav-link.active {
+  color: #0d6efd;
+  background: var(--sidebar-active-bg);
+  font-weight: 600;
+}
+
+/* Reduce default list-group borders inside cards */
+.list-group-item {
+  border-left: 0;
+  border-right: 0;
+}
+
+/* Smooth scrolling for sidebar */
+.sidebar {
+  scroll-behavior: smooth;
+}
+
+.admin-wrap {
+  background: #f9fafb;
+}
+
+.sidebar {
+  min-width: 240px;
+  max-width: 240px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    transform: none !important;
+    position: relative;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 1040;
+}
+
+
+
+
+
+

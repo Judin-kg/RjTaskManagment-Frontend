@@ -1,0 +1,91 @@
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* Enables horizontal scroll on mobile */
+  -webkit-overflow-scrolling: touch;
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* Keeps table scrollable on smaller devices */
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.task-table th,
+.task-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.task-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.task-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Tablet View (≤ 768px) */
+@media (max-width: 768px) {
+  .task-table th,
+  .task-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+/* Mobile View (≤ 480px) */
+@media (max-width: 480px) {
+  .task-table th,
+  .task-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .task-table {
+    min-width: 600px; /* Keeps horizontal scroll */
+  }
+}
+.clear-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease-in-out;
+}
+
+.clear-btn:hover {
+  background: #d32f2f;
+}
+
+
+
+
+
+/* 🔎 Filter Section */
+.filter-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-input {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.filter-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}

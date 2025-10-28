@@ -1,0 +1,162 @@
+/* .staff-list-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.staff-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.staff-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.staff-table th,
+.staff-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.staff-table th {
+  background: #fdfeff;
+  color: #0b0b0b;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.staff-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.staff-table tr:hover {
+  background: #f1f5ff;
+} */
+
+
+.staff-list-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.staff-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Table Wrapper for Scroll */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* enables horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch;
+}
+
+.staff-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 600px; /* keeps table scrollable */
+}
+
+.staff-table th,
+.staff-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.staff-table th {
+  background: #fdfeff;
+  color: #0b0b0b;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.staff-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.staff-table tr:hover {
+  background: #f1f5ff;
+}
+
+/* ===== Tablet View (≤ 768px) ===== */
+@media (max-width: 768px) {
+  .staff-table th,
+  .staff-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* ===== Mobile View (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .staff-table {
+    min-width: 500px; /* keeps horizontal scroll */
+  }
+
+  .staff-table th,
+  .staff-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .staff-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+.actions-cell {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reset-btn,
+.delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.reset-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .actions-cell {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .reset-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,139 @@
+/* ManagerList.css */
+
+.manager-list-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.manager-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.manager-list-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #2c3e50;
+}
+
+.add-manager-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-manager-btn:hover {
+  background-color: #2980b9;
+}
+
+/* ===== Table Wrapper for Scroll ===== */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* enables horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch;
+}
+
+.manager-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  min-width: 600px; /* ensures scroll on smaller devices */
+}
+
+.manager-table th,
+.manager-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+.manager-table th {
+  background-color: #f4f6f7;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.manager-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.manager-table tr:hover {
+  background-color: #ecf0f1;
+}
+
+/* ===== Tablet View (≤ 768px) ===== */
+@media (max-width: 768px) {
+  .manager-table th,
+  .manager-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* ===== Mobile View (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .manager-table {
+    min-width: 500px; /* allows horizontal scroll */
+  }
+
+  .manager-table th,
+  .manager-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .manager-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+.actions-cell {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reset-btn,
+.delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.reset-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .manager-table {
+    font-size: 14px;
+  }
+  .actions-cell {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .reset-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}
+

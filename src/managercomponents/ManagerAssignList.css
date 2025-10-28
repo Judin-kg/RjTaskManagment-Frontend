@@ -1,0 +1,94 @@
+.manager-dashboard {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.task-status-chart {
+  margin-bottom: 30px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* horizontal scroll for mobile */
+  -webkit-overflow-scrolling: touch;
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* ensures scroll on small devices */
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.task-table th,
+.task-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.task-table th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.task-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.task-table tr:hover {
+  background: #f1f5ff;
+}
+
+.task-table select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* ===== Tablet View (≤ 768px) ===== */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 20px;
+  }
+
+  .task-table th,
+  .task-table td {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .task-status-chart {
+    height: 250px;
+  }
+}
+
+/* ===== Mobile View (≤ 480px) ===== */
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 18px;
+  }
+
+  .task-table {
+    min-width: 600px; /* horizontal scroll */
+  }
+
+  .task-table th,
+  .task-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .task-status-chart {
+    height: 200px;
+  }
+}

@@ -1,0 +1,99 @@
+.company-list-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.company-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.company-list-header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.add-company-btn {
+  padding: 8px 16px;
+  background-color: #4cafef;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-company-btn:hover {
+  background-color: #2196f3;
+}
+
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.company-table th,
+.company-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.company-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #444;
+}
+
+.company-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.company-table td {
+  color: #555;
+}
+
+/* Scrollable wrapper for horizontal scroll */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* Enables horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
+  margin-top: 10px;
+}
+
+
+/* ✅ Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 5px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
