@@ -31,7 +31,7 @@ console.log(localStorage,"locallllllllll");
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/companies");
+        const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/companies");
         setCompanies(res.data);
       } catch (err) {
         console.error("Error fetching companies:", err);
@@ -54,7 +54,7 @@ console.log(localStorage,"locallllllllll");
 
       if (endpoint) {
         axios
-          .get(`https://rj-task-managment-rjatlas-server.vercel.app${endpoint}`)
+          .get(`https://rjtaskmanagment-server.onrender.com${endpoint}`)
           .then((res) => setUsers(res.data))
           .catch((err) => console.error("Error fetching users:", err));
       } else {
@@ -80,7 +80,7 @@ console.log(localStorage,"locallllllllll");
     e.preventDefault();
      setLoading(true); // ✅ start loading
     try {
-      await axios.post("https://rj-task-managment-rjatlas-server.vercel.app/api/tasks", form);
+      await axios.post("https://rjtaskmanagment-server.onrender.com/api/tasks", form);
       setForm({
         taskName: "",
         description: "",

@@ -43,7 +43,7 @@ function EditTaskAssignModal({ isOpen, onClose, onUpdated, taskData: task }) {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/companies");
+        const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/companies");
         setCompanies(res.data);
       } catch (err) {
         console.error("Error fetching companies:", err);
@@ -63,7 +63,7 @@ function EditTaskAssignModal({ isOpen, onClose, onUpdated, taskData: task }) {
 
     if (endpoint) {
       axios
-        .get(`https://rj-task-managment-rjatlas-server.vercel.app${endpoint}`)
+        .get(`https://rjtaskmanagment-server.onrender.com${endpoint}`)
         .then((res) => setUsers(res.data))
         .catch((err) => console.error("Error fetching users:", err));
     }
@@ -89,7 +89,7 @@ function EditTaskAssignModal({ isOpen, onClose, onUpdated, taskData: task }) {
     setLoading(true);
     try {
       await axios.put(
-        `https://rj-task-managment-rjatlas-server.vercel.app/api/tasks/${task._id}`,
+        `https://rjtaskmanagment-server.onrender.com/api/tasks/${task._id}`,
         form
       );
       onUpdated();

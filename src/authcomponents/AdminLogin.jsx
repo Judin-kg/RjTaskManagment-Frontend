@@ -22,7 +22,7 @@ const AdminLogin = () => {
     setMessage('');
      setLoading(true);
     try {
-      const res = await axios.post('https://rj-task-managment-rjatlas-server.vercel.app/api/auth/admin-login', formData);
+      const res = await axios.post('https://rjtaskmanagment-server.onrender.com/api/auth/admin-login', formData);
       console.log(res,"ressss");
       
       const { token, user } = res.data;

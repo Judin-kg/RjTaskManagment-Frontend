@@ -15,7 +15,7 @@ export default function ManagerList() {
     //  const [resetId, setResetId] = useState(null);
   const fetchManagers = async () => {
     try {
-      const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/managers");
+      const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/managers");
       const managerOnly = res.data.filter((u) => u.role === "manager");
       setManagers(managerOnly);
     } catch (err) {
@@ -37,7 +37,7 @@ export default function ManagerList() {
     if (!window.confirm("Are you sure you want to delete this manager?")) return;
     try {
       await axios.delete(
-        `https://rj-task-managment-rjatlas-server.vercel.app/api/managers/${id}`
+        `https://rjtaskmanagment-server.onrender.com/api/managers/${id}`
       );
       setManagers((prev) => prev.filter((m) => m._id !== id)); // update UI immediately
     } catch (err) {
@@ -51,7 +51,7 @@ export default function ManagerList() {
     if (!newPassword) return;
 
     try {
-      await axios.put(`https://rj-task-managment-rjatlas-server.vercel.app/api/managers/${id}/reset-password`, {
+      await axios.put(`https://rjtaskmanagment-server.onrender.com/api/managers/${id}/reset-password`, {
         newPassword,
       });
       alert("Password reset successfully!");

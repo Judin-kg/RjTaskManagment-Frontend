@@ -117,7 +117,7 @@ export default function StaffListTable() {
   // Fetch staff list
   const fetchStaff = async () => {
     try {
-      const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/auth");
+      const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/auth");
       setStaff(res.data);
     } catch (err) {
       console.error("Error fetching staff:", err);
@@ -138,7 +138,7 @@ export default function StaffListTable() {
     if (!window.confirm("Are you sure you want to delete this staff member?")) return;
     try {
       await axios.delete(
-        `https://rj-task-managment-rjatlas-server.vercel.app/api/auth/${id}`
+        `https://rjtaskmanagment-server.onrender.com/api/auth/${id}`
       );
       fetchStaff(); // Refresh staff list
     } catch (err) {
@@ -153,7 +153,7 @@ export default function StaffListTable() {
 
   try {
     await axios.put(
-      `https://rj-task-managment-rjatlas-server.vercel.app/api/auth/${id}/reset-password`,
+      `https://rjtaskmanagment-server.onrender.com/api/auth/${id}/reset-password`,
       { newPassword }
     );
     alert("Password reset successfully!");

@@ -14,7 +14,7 @@ function AddCompanyModalForm({ isOpen, onClose, onCreated }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://rj-task-managment-rjatlas-server.vercel.app/api/companies", form);
+      await axios.post("https://rjtaskmanagment-server.onrender.com/api/companies", form);
       setForm({ name: "" });
       if (onCreated) onCreated(); // refresh company list
       onClose();

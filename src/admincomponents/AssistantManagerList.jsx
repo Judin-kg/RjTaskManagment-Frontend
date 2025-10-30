@@ -18,7 +18,7 @@ import EditAssistantManagerModalForm from "./EditAssistantManagerModalForm";
 
   const fetchAssistants = async () => {
     try {
-      const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/assistant-managers");
+      const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/assistant-managers");
       setAssistants(res.data);
     } catch (err) {
       console.error("Error fetching assistant managers:", err);
@@ -40,7 +40,7 @@ import EditAssistantManagerModalForm from "./EditAssistantManagerModalForm";
 
     try {
       await axios.delete(
-        `https://rj-task-managment-rjatlas-server.vercel.app/api/assistant-managers/${id}`
+        `https://rjtaskmanagment-server.onrender.com/api/assistant-managers/${id}`
       );
       fetchAssistants(); // Refresh list
     } catch (err) {

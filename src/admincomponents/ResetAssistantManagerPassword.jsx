@@ -7,7 +7,7 @@ function ResetAssistantManagerPassword({ assistantId, onClose }) {
   const handleReset = async () => {
     try {
       await axios.put(
-        `https://rj-task-managment-rjatlas-server.vercel.app/api/assistant-managers/${assistantId}/reset-password`,
+        `https://rjtaskmanagment-server.onrender.com/api/assistant-managers/${assistantId}/reset-password`,
         { newPassword }
       );
       alert("Password reset successfully!");

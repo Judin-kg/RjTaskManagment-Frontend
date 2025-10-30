@@ -17,7 +17,7 @@ function AddAssistantManagerModalForm({ isOpen, onClose, onCreated }) {
 useEffect(() => {
   if (isOpen) {
     axios
-      .get("https://rj-task-managment-rjatlas-server.vercel.app/api/managers")
+      .get("https://rjtaskmanagment-server.onrender.com/api/managers")
       .then((res) => {
         const managerOnly = res.data.filter((u) => u.role === "manager");
         setManagers(managerOnly);
@@ -33,7 +33,7 @@ useEffect(() => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://rj-task-managment-rjatlas-server.vercel.app/api/assistant-managers", {
+      await axios.post("https://rjtaskmanagment-server.onrender.com/api/assistant-managers", {
         ...form,
         role: "assistant_manager",
       });

@@ -15,7 +15,7 @@ export default function CompanyReport() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/tasks/tasks");
+      const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/tasks/tasks");
       setTasks(res.data);
       generateCompanyReport(res.data);
     } catch (err) {

@@ -34,7 +34,7 @@ function EditAssistantManagerModalForm({ isOpen, assistant, onClose, onUpdated }
     setLoading(true);
     try {
       await axios.put(
-        `https://rj-task-managment-rjatlas-server.vercel.app/api/assistant-managers/${assistant._id}`,
+        `https://rjtaskmanagment-server.onrender.com/api/assistant-managers/${assistant._id}`,
         form
       );
       onUpdated();

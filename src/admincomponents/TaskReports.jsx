@@ -39,7 +39,7 @@ const [endDate, setEndDate] = useState("");
 
   const fetchReports = async () => {
     try {
-      const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/tasks/reports");
+      const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/tasks/reports");
       setReport(res.data);
     } catch (err) {
       console.error("❌ Error fetching reports:", err);
@@ -50,7 +50,7 @@ const [endDate, setEndDate] = useState("");
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/tasks/tasks");
+      const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/tasks/tasks");
       setTasks(res.data);
       console.log("Fetched taskssssssss:", res.data);
     } catch (err) {

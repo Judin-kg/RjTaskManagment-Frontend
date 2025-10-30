@@ -17,7 +17,7 @@ export default function ManagerLogin() {
     setError("");
    setLoading(true);
     try {
-      const res = await axios.post("https://rj-task-managment-rjatlas-server.vercel.app/api/managers/login", form);
+      const res = await axios.post("https://rjtaskmanagment-server.onrender.com/api/managers/login", form);
       localStorage.setItem("managerToken", res.data.token);
       localStorage.setItem("manager", JSON.stringify(res.data.manager));
       navigate("/manager/dashboard");

@@ -6,7 +6,7 @@ export default function HierarchyView() {
   const [treeData, setTreeData] = useState([]);
 
   useEffect(() => {
-    axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/auth/hierarchy")
+    axios.get("https://rjtaskmanagment-server.onrender.com/api/auth/hierarchy")
       .then((res) => setTreeData(res.data))
       .catch((err) => console.error("Error fetching hierarchy:", err));
   }, []);

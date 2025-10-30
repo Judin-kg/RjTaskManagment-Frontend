@@ -15,7 +15,7 @@ export default function CompanyListTable() {
   const [selectedCompany, setSelectedCompany] = useState(null);
   const fetchCompanies = async () => {
     try {
-      const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/companies");
+      const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/companies");
       setCompanies(res.data);
     } catch (err) {
       console.error("Error fetching companies:", err);
@@ -35,7 +35,7 @@ export default function CompanyListTable() {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this company?")) return;
     try {
-      await axios.delete(`https://rj-task-managment-rjatlas-server.vercel.app/api/companies/${id}`);
+      await axios.delete(`https://rjtaskmanagment-server.onrender.com/api/companies/${id}`);
       fetchCompanies();
     } catch (err) {
       console.error("Error deleting company:", err);

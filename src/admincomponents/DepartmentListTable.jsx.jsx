@@ -12,7 +12,7 @@ export default function DepartmentListTable() {
   const [searchTerm, setSearchTerm] = useState(""); // ✅ Search term state
   const fetchDepartments = async () => {
     try {
-      const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/departments");
+      const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/departments");
       setDepartments(res.data);
     } catch (err) {
       console.error("Error fetching departments:", err);
@@ -165,7 +165,7 @@ export default function DepartmentListTable() {
                       className="delete-btn"
                       onClick={async () => {
                         await axios.delete(
-                          `https://rj-task-managment-rjatlas-server.vercel.app/api/departments/${dept._id}`
+                          `https://rjtaskmanagment-server.onrender.com/api/departments/${dept._id}`
                         );
                         fetchDepartments();
                       }}

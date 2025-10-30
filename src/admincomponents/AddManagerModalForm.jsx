@@ -95,7 +95,7 @@ function AddManagerModalForm({ isOpen, onClose, onCreated }) {
   useEffect(() => {
     if (isOpen) {
       axios
-        .get("https://rj-task-managment-rjatlas-server.vercel.app/api/departments")
+        .get("https://rjtaskmanagment-server.onrender.com/api/departments")
         .then((res) => setDepartments(res.data))
         .catch((err) => console.error("Error fetching departments:", err));
     }
@@ -108,7 +108,7 @@ function AddManagerModalForm({ isOpen, onClose, onCreated }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://rj-task-managment-rjatlas-server.vercel.app/api/managers", { ...form, role: "manager" });
+      await axios.post("https://rjtaskmanagment-server.onrender.com/api/managers", { ...form, role: "manager" });
       setForm({
         name: "",
         email: "",

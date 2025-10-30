@@ -20,7 +20,7 @@ export default function EditStaffModal({ isOpen, onClose, staffData, onUpdated }
   useEffect(() => {
     const fetchAssistantManagers = async () => {
       try {
-        const res = await axios.get("https://rj-task-managment-rjatlas-server.vercel.app/api/assistant-managers");
+        const res = await axios.get("https://rjtaskmanagment-server.onrender.com/api/assistant-managers");
         setAssistantManagers(res.data);
       } catch (err) {
         console.error("Error fetching assistant managers:", err);
@@ -41,7 +41,7 @@ export default function EditStaffModal({ isOpen, onClose, staffData, onUpdated }
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://rj-task-managment-rjatlas-server.vercel.app/api/auth/${staffData._id}/update`, form);
+      await axios.put(`https://rjtaskmanagment-server.onrender.com/api/auth/${staffData._id}/update`, form);
       alert("Staff updated successfully!");
       onUpdated();
       onClose();

@@ -95,7 +95,7 @@ export default function ManagerAssignList() {
     if (!manager) return;
 
     axios
-      .get(`https://rj-task-managment-rjatlas-server.vercel.app/api/tasks/user/${manager.id}`, {
+      .get(`https://rjtaskmanagment-server.onrender.com/api/tasks/user/${manager.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -110,7 +110,7 @@ export default function ManagerAssignList() {
   const handleStatusChange = async (taskId, newStatus) => {
     try {
       await axios.put(
-        `https://rj-task-managment-rjatlas-server.vercel.app/api/tasks/${taskId}`,
+        `https://rjtaskmanagment-server.onrender.com/api/tasks/${taskId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -18,7 +18,7 @@ export default function StaffDashboard() {
 
     // ✅ Fetch tasks assigned to this staff member
     axios
-      .get(`https://rj-task-managment-rjatlas-server.vercel.app/api/tasks/user/${staff.id}`, {
+      .get(`https://rjtaskmanagment-server.onrender.com/api/tasks/user/${staff.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -36,7 +36,7 @@ export default function StaffDashboard() {
   const handleStatusChange = async (taskId, newStatus) => {
     try {
       await axios.put(
-        `https://rj-task-managment-rjatlas-server.vercel.app/api/tasks/${taskId}`,
+        `https://rjtaskmanagment-server.onrender.com/api/tasks/${taskId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
