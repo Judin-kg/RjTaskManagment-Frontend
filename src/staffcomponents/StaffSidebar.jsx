@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 // import "../admincomponents/AdminDashboard.css"; // Assuming you have a CSS file for styles
 
 import axios from "axios";
-import {
-  LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
-} from "recharts";
+// import {
+//   LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
+// } from "recharts";
 import"./StaffSidebar.css";
 import StaffReports from "./StaffReports";
 import StaffDashboard from "./StaffDashboard";
-import { motion, AnimatePresence} from "framer-motion";
-import StaffListTable from "../admincomponents/StaffListTable";
+// import { motion, AnimatePresence} from "framer-motion";
+// import StaffListTable from "../admincomponents/StaffListTable";
 import StaffTaskAssignList from "./StaffTaskAssignList";
 
 // Sidebar items
@@ -23,12 +23,12 @@ const NAV_ITEMS = [
 function StaffSidebar() {
   const [active, setActive] = useState("dashboard");
   const [isOpen, setIsOpen] = useState(false);
- const [userGraph, setUserGraph] = useState([]);
-  const [orderGraph, setOrderGraph] = useState([]);
+//  const [userGraph, setUserGraph] = useState([]);
+//   const [orderGraph, setOrderGraph] = useState([]);
 
 
     // 👇 States for dashboard stats
-  const [stats, setStats] = useState({ userCount: 0, orderCount: 0 });
+  // const [stats, setStats] = useState({ userCount: 0, orderCount: 0 });
 
 //   useEffect(() => {
 
