@@ -61,7 +61,7 @@ console.log(localStorage,"locallllllllll");
         setUsers([]);
       }
     }
-  }, [form.role,loggedUser]);
+  }, [form.role]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
