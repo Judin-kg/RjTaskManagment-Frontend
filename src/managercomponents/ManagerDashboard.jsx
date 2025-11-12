@@ -73,15 +73,13 @@
 
 
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../admincomponents/AdminDashboard.css"; // Assuming you have a CSS file for styles
 
-import axios from "axios";
-import {
-  LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
-} from "recharts";
+
+
 import ManagerAssignList from "./ManagerAssignList";
-import ManagerTaskAssignModal from "./ManagerTaskAssignModal";
+
 import ManagerTaskAssignList from "./ManagerTaskAssignList";
 import ManagerReports from "./ManagerReports";
 import CompanyTaskReport from "../admincomponents/CompanyTaskReport";
@@ -100,12 +98,12 @@ const NAV_ITEMS = [
 function ManagerDashboard() {
   const [active, setActive] = useState("dashboard");
   const [isOpen, setIsOpen] = useState(false);
- const [userGraph, setUserGraph] = useState([]);
-  const [orderGraph, setOrderGraph] = useState([]);
+//  const [userGraph, setUserGraph] = useState([]);
+//   const [orderGraph, setOrderGraph] = useState([]);
 
 
     // 👇 States for dashboard stats
-  const [stats, setStats] = useState({ userCount: 0, orderCount: 0 });
+  // const [stats, setStats] = useState({ userCount: 0, orderCount: 0 });
 
 //   useEffect(() => {
 
@@ -125,11 +123,11 @@ function ManagerDashboard() {
 //     fetchStats();
 //   }, []);
 
-    const formatData = (data) =>
-    data.map((d) => ({
-      month: new Date(2025, d._id - 1).toLocaleString("default", { month: "short" }),
-      count: d.count,
-    }));
+    // const formatData = (data) =>
+    // data.map((d) => ({
+    //   month: new Date(2025, d._id - 1).toLocaleString("default", { month: "short" }),
+    //   count: d.count,
+    // }));
 
   const handleSelect = (key) => {
     setActive(key);

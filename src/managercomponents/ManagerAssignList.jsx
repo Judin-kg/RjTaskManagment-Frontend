@@ -105,7 +105,7 @@ export default function ManagerAssignList() {
       })
       .catch((err) => console.error("Error fetching manager tasks:", err))
       .finally(() => setLoading(false));
-  }, [token]);
+  }, [token, manager]);
 
   const handleStatusChange = async (taskId, newStatus) => {
     try {

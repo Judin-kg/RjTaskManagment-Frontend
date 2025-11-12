@@ -43,7 +43,7 @@ function EditManagerTaskAssignModal({ isOpen, onClose, onUpdated, taskData }) {
         },
       });
     }
-  }, [taskData]);
+  }, [taskData, loggedUser]);
 
   // Fetch companies
   useEffect(() => {
@@ -80,7 +80,7 @@ function EditManagerTaskAssignModal({ isOpen, onClose, onUpdated, taskData }) {
           .catch((err) => console.error("Error fetching users:", err));
       }
     }
-  }, [form.role]);
+  }, [form.role,loggedUser]);
 
   // Handle input changes
 //   const handleChange = (e) => {
