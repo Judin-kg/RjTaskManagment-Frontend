@@ -16,9 +16,7 @@ export default function StaffReports() {
 
 const staff = JSON.parse(localStorage.getItem("user"));
   // const token = localStorage.getItem("managerToken");
-  useEffect(() => {
-    if (staff?.id) fetchManagerTasks();
-  }, [staff]);
+ 
 
   const fetchManagerTasks = async () => {
     try {
@@ -31,7 +29,11 @@ const staff = JSON.parse(localStorage.getItem("user"));
     }
   };
 console.log(tasks,"tasssssssssssssssssssssssss");
+ useEffect(() => {
+    if (staff?.id) fetchManagerTasks();
+  }, [staff,fetchManagerTasks]);
 
+  
   if (loading) return <p className="text-center mt-4">Loading tasks...</p>;
  // ✅ Apply filters
   // const filteredTasks = tasks.filter((task) => {

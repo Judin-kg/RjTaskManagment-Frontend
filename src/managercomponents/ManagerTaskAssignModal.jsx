@@ -28,7 +28,7 @@ function ManagerTaskAssignModal({ isOpen, onClose, onCreated }) {
       // ✅ set assignedBy automatically when modal opens
       setForm((prev) => ({ ...prev, assignedBy: loggedUser.id }));
     }
-  }, []);
+  }, [loggedUser]);
 
   useEffect(() => {
     const fetchCompanies = async () => {
@@ -42,7 +42,7 @@ function ManagerTaskAssignModal({ isOpen, onClose, onCreated }) {
       }
     };
     if (isOpen) fetchCompanies();
-  }, [isOpen]);
+  }, [isOpen,companies]);
 
     
   useEffect(() => {
@@ -67,7 +67,7 @@ function ManagerTaskAssignModal({ isOpen, onClose, onCreated }) {
         setUsers([]);
       }
     }
-  }, [form.role]);
+  }, [form.role,loggedUser]);
 
   // const handleChange = (e) => {
   //   setForm({ ...form, [e.target.name]: e.target.value });

@@ -1,15 +1,12 @@
 import React, {useState } from "react";
 // import "../admincomponents/AdminDashboard.css"; // Assuming you have a CSS file for styles
 
-import axios from "axios";
-// import {
-//   LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
-// } from "recharts";
+
 import"./StaffSidebar.css";
 import StaffReports from "./StaffReports";
 import StaffDashboard from "./StaffDashboard";
-// import { motion, AnimatePresence} from "framer-motion";
-// import StaffListTable from "../admincomponents/StaffListTable";
+
+
 import StaffTaskAssignList from "./StaffTaskAssignList";
 
 // Sidebar items
@@ -48,11 +45,11 @@ function StaffSidebar() {
 //     fetchStats();
 //   }, []);
 
-    const formatData = (data) =>
-    data.map((d) => ({
-      month: new Date(2025, d._id - 1).toLocaleString("default", { month: "short" }),
-      count: d.count,
-    }));
+    // const formatData = (data) =>
+    // data.map((d) => ({
+    //   month: new Date(2025, d._id - 1).toLocaleString("default", { month: "short" }),
+    //   count: d.count,
+    // }));
 
   const handleSelect = (key) => {
     setActive(key);

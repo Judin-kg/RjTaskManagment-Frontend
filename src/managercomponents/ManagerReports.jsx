@@ -11,9 +11,7 @@ export default function ManagerReport() {
   const [searchDate, setSearchDate] = useState(""); // Created Date filter
 const manager = JSON.parse(localStorage.getItem("manager"));
   // const token = localStorage.getItem("managerToken");
-  useEffect(() => {
-    if (manager?.id) fetchManagerTasks();
-  }, [manager]);
+  
 
   const fetchManagerTasks = async () => {
     try {
@@ -26,7 +24,9 @@ const manager = JSON.parse(localStorage.getItem("manager"));
     }
   };
 console.log(tasks,"tasssssssssssssssssssssssss");
-
+useEffect(() => {
+    if (manager?.id) fetchManagerTasks();
+  }, [manager,fetchManagerTasks]);
 
  // Filter tasks by name and created date
   // const filteredTasks = tasks.filter((task) => {

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 // import './App.css';
 
 // function App() {
@@ -26,17 +26,17 @@ import ManagerLogin from './authcomponents/ManagerLogin';
 import ManagerDashboard from './managercomponents/ManagerDashboard';
 import AsstManagerLogin from './authcomponents/AsstManagerLogin';
 import AssistantManagerDashboard from './assistantmanagercomponents/AsstManagerDashboard';
-import StaffDashboard from './staffcomponents/StaffDashboard';
+// import StaffDashboard from './staffcomponents/StaffDashboard';
 import StaffSidebar from './staffcomponents/StaffSidebar';
 
 // import ManagerLogin from './manager/ManagerLogin';
 
 
 // Protect private routes (basic token check)
-const PrivateRoute = ({ children }) => {
-  const token = localStorage.getItem('token');
-  return token ? children : <Navigate to="/login" />;
-};
+// const PrivateRoute = ({ children }) => {
+//   const token = localStorage.getItem('token');
+//   return token ? children : <Navigate to="/login" />;
+// };
 
 // Only allow admins
 const AdminRoute = ({ children }) => {
