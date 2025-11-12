@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./ManagerLogin.css"; // ✅ import CSS file
-
+import taskimage2 from '../utils/Taskmanagment2.png';
 export default function ManagerLogin() {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
@@ -29,7 +29,16 @@ export default function ManagerLogin() {
   };
 
   return (
-    <div className="manager-login-container" style={{backgroundImage: 'url(https://cdn.prod.website-files.com/62fcfcf2e1a4c21ed18b80e6/655eb64bb91e85467a254310_3pjakl42bv.png)', backgroundSize: 'cover', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center',width:'100%'}}>
+    <div className="manager-login-container" style={{
+        backgroundImage: `url(${taskimage2})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%'
+      }}>
       <div className="manager-login-card" style={{backdropFilter: 'blur(10px)', padding: '2rem', borderRadius: '1rem', boxShadow: '0px 6px 14px rgba(0, 0, 0, 0.2)', width: '100%', maxWidth: '400px', animation: 'fadeIn 0.5s ease-in-out'}}>
         <h2 className="manager-login-title">Manager Login</h2>
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import taskimage from '../utils/Taskmanagment.png';
 import './StaffLogin.css';
 const StaffLogin = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -86,9 +87,18 @@ const StaffLogin = () => {
     //   </div>
     // </div>
 
-        <div className="admin-login-container" style={{backgroundImage: 'url(https://www.usemotion.com/cdn-cgi/image/onerror=redirect,width=1400,height=780,format=webp/https://uploads-ssl.webflow.com/62fcfcf2e1a4c21ed18b80e6/649b11fa827d40c241e07747_y2leq9kjx1.png)', backgroundSize: 'cover', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center',width:'100%'}}>
+        <div className="admin-login-container"  style={{
+        backgroundImage: `url(${taskimage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%'
+      }}>
       <div style={{backdropFilter: 'blur(10px)', padding: '2rem', borderRadius: '1rem', boxShadow: '0px 6px 14px rgba(0, 0, 0, 0.2)', width: '100%', maxWidth: '400px', animation: 'fadeIn 0.5s ease-in-out'}}>
-        <h2 className="admin-login-title"> Staff Login</h2>
+        <h2 className="admin-login-title" style={{color:"silver"}}> Staff Login</h2>
 
         {message && <div className="admin-login-error">{message}</div>}
 

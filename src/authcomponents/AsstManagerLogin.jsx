@@ -65,7 +65,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./AssistantManagerLogin.css"; // ✅ import CSS file
-
+import taskimage1 from '../utils/Taskmanagment1.png';
 export default function AsstManagerLogin() {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
@@ -93,9 +93,18 @@ export default function AsstManagerLogin() {
   };
 
   return (
-    <div className="assistant-manager-login-container" style={{backgroundImage: 'url(https://www.usemotion.com/cdn-cgi/image/onerror=redirect,width=1400,height=780,format=webp/https://uploads-ssl.webflow.com/62fcfcf2e1a4c21ed18b80e6/64777b497a8679ea58687ee6_4ong0wvlcd.png)', backgroundSize: 'cover', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center',width:'100%'}}>
+    <div className="assistant-manager-login-container" style={{
+        backgroundImage: `url(${taskimage1})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%'
+      }}>
       <div className="assistant-manager-login-card"  style={{backdropFilter: 'blur(10px)', padding: '2rem', borderRadius: '1rem', boxShadow: '0px 6px 14px rgba(0, 0, 0, 0.2)', width: '100%', maxWidth: '400px', animation: 'fadeIn 0.5s ease-in-out'}}>
-        <h2>Assistant Manager Login</h2>
+        <h2 style={{color:"silver"}}>Assistant Manager Login</h2>
 
         {error && <p className="assistant-manager-login-error">{error}</p>}
 
