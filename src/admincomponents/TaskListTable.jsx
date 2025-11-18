@@ -20,7 +20,11 @@ const [selectedTask, setSelectedTask] = useState(null);
   const [filterDate, setFilterDate] = useState("");
   // Fetch tasks
   
-
+ const [startDate, setStartDate] = useState("");
+const [endDate, setEndDate] = useState("");
+ const [roleFilter, setRoleFilter] = useState(""); // ✅ NEW state for role filtering
+  const [nameFilter, setNameFilter] = useState(""); // ✅ Name Filter (sub-category)
+  const [statusFilter, setStatusFilter] = useState("");
 
 
   
@@ -112,17 +116,62 @@ useEffect(() => {
 
   //   return matchesSearch ||companyNameMatch && matchesDate;
   // });
-  const filteredTasks = tasks.filter((t) => {
-  const matchesSearch =
-    t.taskName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    t.company?.name?.toLowerCase().includes(searchQuery.toLowerCase());
 
-  const matchesDate = filterDate
-    ? new Date(t.createdAt).toISOString().split("T")[0] === filterDate
+
+
+//   const filteredTasks = tasks.filter((t) => {
+//   const matchesSearch =
+//     t.taskName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//     t.company?.name?.toLowerCase().includes(searchQuery.toLowerCase());
+
+//   const matchesDate = filterDate
+//     ? new Date(t.createdAt).toISOString().split("T")[0] === filterDate
+//     : true;
+
+//   return matchesSearch && matchesDate; // ✅ Ensure BOTH search & date match
+// });
+
+const availableNames =
+    roleFilter && tasks.length > 0
+      ? Array.from(
+          new Set(
+            tasks
+              .filter((t) => t.role?.toLowerCase() === roleFilter.toLowerCase())
+              .map((t) => t.assignedTo?.name || "N/A")
+          )
+        )
+      : [];
+
+const filteredTasks = tasks.filter((t) => {
+     const taskDate = new Date(t.createdAt).toISOString().split("T")[0];
+    const matchesSearch = searchQuery
+      ? t.taskName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        t.company?.name?.toLowerCase().includes(searchQuery.toLowerCase())
+      : true;
+
+    // const matchesDate = filterDate
+    //   ? new Date(t.createdAt).toISOString().split("T")[0] === filterDate
+    //   : true;
+
+     // ✅ Single date filter removed because we are using range
+  const matchesStartDate = startDate ? taskDate >= startDate : true;
+  const matchesEndDate = endDate ? taskDate <= endDate : true;
+
+    const matchesRole = roleFilter
+      ? t.role?.toLowerCase() === roleFilter.toLowerCase()
+      : true;
+
+    const matchesName = nameFilter
+      ? t.assignedTo?.name === nameFilter
+      : true;
+
+      const matchesStatus = statusFilter
+    ? t.status?.toLowerCase() === statusFilter.toLowerCase()
     : true;
 
-  return matchesSearch && matchesDate; // ✅ Ensure BOTH search & date match
-});
+    return matchesSearch && matchesStartDate && matchesEndDate && matchesRole && matchesName && matchesStatus;
+  });
+
 
 // ✅ Edit task
   const handleEdit = (task) => {
@@ -242,26 +291,124 @@ useEffect(() => {
 
       <h1 className="dashboard-title mt-5">Task List</h1>
 
-      <div className="task-list-header">
+    
            
-        
-        <div className="task-filters">
-          <input
-            type="text"
-            placeholder="Search....."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <input
-            type="date"
-            value={filterDate}
-            onChange={(e) => setFilterDate(e.target.value)}
-          />
-          </div>
-        {/* <button className="add-task-btn" onClick={() => setIsModalOpen(true)}>
-          + Add Task
-        </button> */}
+        <div className="task-filters container">
+
+  {/* Search */}
+  <div className="row g-3 mb-3 w-50">
+    <div className="col-12 col-md-6 col-lg-4 w-75">
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="form-control"
+      />
+    </div>
+  </div>
+
+  {/* Date Filters */}
+  <div className="row g-3 mb-3 w-50">
+
+    <div className="col-12 col-md-6 col-lg-3 w-50">
+      <label className="form-label">From Date</label>
+      <input
+        type="date"
+        value={startDate}
+        onChange={(e) => setStartDate(e.target.value)}
+        className="form-control"
+      />
+    </div>
+
+    <div className="col-12 col-md-6 col-lg-3 w-50">
+      <label className="form-label">To Date</label>
+      <input
+        type="date"
+        value={endDate}
+        onChange={(e) => setEndDate(e.target.value)}
+        className="form-control"
+      />
+    </div>
+  </div>
+
+  {/* Status Filter */}
+  <div className="row g-3 mb-3 w-50">
+    <div className="col-12 col-md-6 col-lg-4">
+      <select
+        className="form-select"
+        value={statusFilter}
+        onChange={(e) => setStatusFilter(e.target.value)}
+      >
+        <option value="">All Status</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+        <option value="inprogress">In Progress</option>
+      </select>
+    </div>
+  </div>
+
+  {/* Role Filter */}
+  <div className="row g-3 mb-3 w-50">
+    <div className="col-12 col-md-6 col-lg-4">
+      <select
+        className="form-select"
+        value={roleFilter}
+        onChange={(e) => {
+          setRoleFilter(e.target.value);
+          setNameFilter("");
+        }}
+      >
+        <option value="">All Roles</option>
+        <option value="manager">Manager</option>
+        <option value="assistantmanager">Assistant Manager</option>
+        <option value="myself">Myself</option>
+        <option value="staff">Staff</option>
+      </select>
+    </div>
+
+    {/* Name Filter — Only if a role is selected */}
+    {roleFilter && (
+      <div className="col-12 col-md-6 col-lg-4 ">
+        <select
+          className="form-select"
+          value={nameFilter}
+          onChange={(e) => setNameFilter(e.target.value)}
+        >
+          <option value="">All {roleFilter}s</option>
+          {availableNames.map((name, i) => (
+            <option key={i} value={name}>
+              {name}
+            </option>
+          ))}
+        </select>
       </div>
+    )}
+  </div>
+
+  {/* Clear Filters */}
+  <div className="row mt-3">
+    <div className="col-12 col-md-4 w-50">
+      <button
+        className="btn btn-outline-secondary "
+        onClick={() => {
+          setSearchQuery("");
+          setStartDate("");
+          setEndDate("");
+          setRoleFilter("");
+          setNameFilter("");
+          setStatusFilter("");
+        }}
+      >
+        Clear Filters
+      </button>
+    </div>
+  </div>
+
+</div>
+
+   
+     
 
        <button className="add-task-btn mb-2" style={{float:"right"}} onClick={() => setIsModalOpen(true)}>
           + Add Task
