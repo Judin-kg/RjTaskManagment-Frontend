@@ -158,17 +158,40 @@ export default function ManagerAssignList() {
   const COLORS = ["#facc15", "#3b82f6", "#22c55e"]; // yellow, blue, green
 
  // Filter tasks by taskName and filterDate
-  const filteredTasks = tasks.filter((task) => {
-    const matchesName = task.taskName.toLowerCase().includes(searchName.toLowerCase());
 
-    let matchesDate = true;
-    if (filterDate) {
-      const taskDate = new Date(task.scheduledTime).toISOString().split("T")[0];
-      matchesDate = taskDate === filterDate;
-    }
+  // const filteredTasks = tasks.filter((task) => {
+  //   const matchesName = task.taskName.toLowerCase().includes(searchName.toLowerCase());
 
-    return matchesName && matchesDate;
-  });
+  //   let matchesDate = true;
+  //   if (filterDate) {
+  //     const taskDate = new Date(task.scheduledTime).toISOString().split("T")[0];
+  //     matchesDate = taskDate === filterDate;
+  //   }
+
+  //   return matchesName && matchesDate;
+  // });
+
+  const filteredTasks = Array.isArray(tasks)
+  ? tasks.filter((task) => {
+      const matchesName = task.taskName
+        .toLowerCase()
+        .includes(searchName.toLowerCase());
+
+      let matchesDate = true;
+
+      if (filterDate) {
+        const taskDate = new Date(task.scheduledTime)
+          .toISOString()
+          .split("T")[0];
+
+        matchesDate = taskDate === filterDate;
+      }
+
+      return matchesName && matchesDate;
+    })
+  : [];
+
+
   return (
 //     <div className="manager-dashboard">
 //       <h2 className="dashboard-title">Welcome, {manager.email}</h2>
