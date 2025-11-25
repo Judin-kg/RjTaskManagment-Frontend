@@ -67,7 +67,7 @@ function ManagerTaskAssignModal({ isOpen, onClose, onCreated }) {
         setUsers([]);
       }
     }
-  }, [form.role,loggedUser]);
+  }, [form.role]);
 
   // const handleChange = (e) => {
   //   setForm({ ...form, [e.target.name]: e.target.value });
